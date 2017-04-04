@@ -23,6 +23,11 @@
 		<Item Name="AI DAQmx Channels" Type="Folder">
 			<Item Name="AI DAQmx Task" Type="NI-DAQmx Task">
 				<Property Name="Channels" Type="Str">AI0 System Voltage, AI1 Current, AI2 Temperature, AI3 Discharge Resistor Voltage</Property>
+				<Property Name="Logging.FilePath" Type="Str">Default ESTF File</Property>
+				<Property Name="Logging.Mode" Type="Str">Log and Read</Property>
+				<Property Name="Logging.SampsPerFile" Type="Str">0</Property>
+				<Property Name="Logging.TDMS.GroupName" Type="Str">Test 1</Property>
+				<Property Name="Logging.TDMS.Operation" Type="Str">Create or Replace</Property>
 				<Property Name="Name" Type="Str">AI DAQmx Task</Property>
 				<Property Name="SampClk.ActiveEdge" Type="Str">Rising</Property>
 				<Property Name="SampClk.Rate" Type="Str">50000</Property>
@@ -588,6 +593,9 @@
 				<Item Name="WDT Get Waveform Subset DBL.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Get Waveform Subset DBL.vi"/>
 				<Item Name="Get Waveform Subset.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Get Waveform Subset.vi"/>
 				<Item Name="DAQmx Stop Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Stop Task.vi"/>
+				<Item Name="DAQmx Configure Logging (TDMS).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Configure Logging (TDMS).vi"/>
+				<Item Name="DAQmx Configure Logging.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Configure Logging.vi"/>
+				<Item Name="DAQmx Start Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Start Task.vi"/>
 			</Item>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -613,20 +621,20 @@
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/App</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/ESTF_App</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{26C8B9B1-A787-4D62-A183-3841803EB040}</Property>
-				<Property Name="Bld_version.build" Type="Int">10</Property>
+				<Property Name="Bld_version.build" Type="Int">12</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">ESTF.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/App/NI_AB_PROJECTNAME.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/ESTF_App/NI_AB_PROJECTNAME.exe</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/App/data</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/ESTF_App/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{5461D65A-9D38-4C02-9184-3171E643CD70}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{CCD9F6DA-9DD4-4BD0-A829-9000477082C6}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main - ESTF.vi</Property>
@@ -702,12 +710,12 @@
 				<Property Name="DistPartCount" Type="Int">3</Property>
 				<Property Name="INST_author" Type="Str">STFC</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
-				<Property Name="INST_buildLocation" Type="Path">../builds/Installer</Property>
+				<Property Name="INST_buildLocation" Type="Path">../builds/ESTF_Installer</Property>
 				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
 				<Property Name="INST_buildSpecName" Type="Str">Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{3C3B3497-94D3-4703-B59F-1BBD9E091D91}</Property>
 				<Property Name="INST_productName" Type="Str">ESTF</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.9</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.10</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">15008029</Property>
 				<Property Name="MSI_arpCompany" Type="Str">STFC</Property>
